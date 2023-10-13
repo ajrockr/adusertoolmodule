@@ -1,0 +1,25 @@
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+insert_final_newline = true
+
+[*.{cs,ps1,psd1,psm1}]
+indent_size = 4
+
+[*.sh]
+end_of_line = lf
+indent_size = 4
+
+[*.{csproj,resx,ps1xml}]
+indent_size = 2
+
+[*.md]
+indent_size = 2
+
+[*.{resx,ruleset,stylecop,xml,xsd,xs1}]
+indent_size = 2
+
+[*.{props,targets,config,nuspec}]
+indent_size = 2
