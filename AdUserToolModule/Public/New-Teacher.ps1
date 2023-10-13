@@ -287,7 +287,7 @@ function New-Teacher {
             $user.DomainName = 'westex.org'
         }
 
-        $user.Save($True) #$False for testing
+        $user.Save($False) #$False for testing
 
         Write-Verbose -Message "New teacher added."
     }

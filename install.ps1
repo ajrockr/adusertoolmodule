@@ -22,7 +22,7 @@ ForEach ($Module in $PowerShellModules) {
 }
 
 # Install Chocolatey
-Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iwr https://community.chocolatey.org/install.ps1 -UseBasicParsing | iex
 
 # Install Chocolatey packages
 ForEach ($Package in $ChocolateyPackages) {choco install $Package -y --no-progress}

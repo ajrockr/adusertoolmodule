@@ -1,11 +1,9 @@
 <#
- #  Create user account
+ #  User object
  #
  #  Author: Anthony Rizzo
  #  Created date: 10/3/2023
  #>
-
-Import-Module -Name ActiveDirectory
 
 class User {
     #region class properties
@@ -48,7 +46,6 @@ class User {
 
     #region class constructors
     User() {
-        # todo: Figure this out, if current session is not AD bound, let user provide server
         if ((Get-cimintance win32_computersystem).partofdomain -ne $True) {
             $this.SessionDomainJoined = $False
             Write-Host 'This session is not joined to an Active Directory domain, please pass the name of a domain controller as the first parameter. ([User]::new("dc"))'
